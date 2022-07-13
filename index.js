@@ -1,11 +1,12 @@
 // Import stylesheets
 import './style.css';
+import recursion from './recursion'
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
-// MATH ALGORITHMS below
+// 4 MATH ALGORITHMS below
 
 // fibonacci algorithm
 const fibonnaci = (n) => {
@@ -75,6 +76,18 @@ function isPowerOf2(n){
   // big O = O(log n) since n is reduced by half
 }
 console.log(isPowerOf2(16))
+
+// power of 2 optimized
+function isPowerof2BitWise(n){
+  if(n<1){
+    return false
+  }
+
+  return (n & (n-1)) === 0
+  // in binary power of 2 ends with 0 (3-100, 4-1000)
+}
+
+recursion()
 
 
 
