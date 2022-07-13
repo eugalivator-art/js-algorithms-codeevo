@@ -1,6 +1,7 @@
 // Import stylesheets
 import './style.css';
 import recursion from './recursion';
+import search from './search';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
@@ -85,4 +86,7 @@ function isPowerof2BitWise(n) {
   // in binary power of 2 ends with 0 (3-100, 4-1000)
 }
 
+// only math recursion
 recursion();
+
+search();
