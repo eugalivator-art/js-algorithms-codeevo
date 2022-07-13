@@ -5,6 +5,8 @@ import './style.css';
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
+// MATH ALGORITHMS below
+
 // fibonacci algorithm
 const fibonnaci = (n) => {
   const arr = [0, 1];
@@ -41,6 +43,8 @@ function isPrime(n){
   // 
 
   for (let i=2; i<n; i++){
+  // for optimal code i<=Math.sqrt(n)
+  // this will make the loop run less times as the sqrt of any number is less than the number itself which gives O(sqrt(n)) time complexity
     if(n%i === 0){
       return false
       // example - starts dividing from number 2 onward ie 4/2 === 0 (ends here returns false), 4/3 , 4/4 (stops at i<n)
@@ -50,6 +54,28 @@ function isPrime(n){
   return true
 }
 // console.log(isPrime(3))
+
+// power of 2 [logic is iterate over number and divide by 2 till it becomes 1]
+function isPowerOf2(n){
+  if(n<1){
+    return false
+  }
+
+  while(n>1){
+    // used while loop because iteration number not known and initialization not required
+    if(n%2 !== 0){
+      // when the remainder is not equal to 0 it is false, if 0 then divide the number by 2 (increament condition at end)
+      return false
+    }
+    n = n/2
+  }
+  // if it passes while loop then it is power of 2, example for 6 - 6%2=0, 6/2 =3, 3%2=1, returns false
+
+  return true
+  // big O = O(log n) since n is reduced by half
+}
+console.log(isPowerOf2(16))
+
 
 
 
