@@ -23,6 +23,8 @@ const fibonnaci = (n) => {
 };
 // console.log(fibonnaci(6));
 
+
+
 // factorial of a number
 function factorial(n) {
   let fact = 1;
@@ -34,6 +36,8 @@ function factorial(n) {
   return fact;
 }
 // console.log(factorial(5))
+
+
 
 // test if number is prime or not
 function isPrime(n) {
@@ -55,6 +59,8 @@ function isPrime(n) {
 }
 // console.log(isPrime(3))
 
+
+
 // power of 2 [logic is iterate over number and divide by 2 till it becomes 1]
 function isPowerOf2(n) {
   if (n < 1) {
@@ -75,6 +81,8 @@ function isPowerOf2(n) {
   // big O = O(log n) since n is reduced by half
 }
 // console.log(isPowerOf2(16))
+
+
 
 // power of 2 optimized
 function isPowerof2BitWise(n) {
