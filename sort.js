@@ -23,6 +23,26 @@ export default function sort(){
     // running the loop till swapping is going on
     // big-0 is O(n^2)
   }
-  console.log(bubbleSort([8,6,4,2,-5]))
+  // console.log(bubbleSort([8,6,4,2,-5]))
+
+
+
+  // insertion sort - split the array into sorted and unsorted parts and compare unsorted array with sorted parts, pick every element and insert it in comparision to every other elements
+  function insertionSort(arr){
+     for(let i=1; i<arr.length-1 ; i++){
+       let nuberToInsert = arr[i];
+       let j = i-1
+
+       while(j>0 && arr[j] > numberToInsert){
+        arr[j+1] = arr[j]
+        j = j-1
+       }
+      //   while is to change the j and arr[j], some swapping
+
+       arr[j+1] = numberToInsert
+      //  insertion happens here
+     }
+  }
+  // console.log(insertionSort([8,16,4,12,-5]))
 
 }
