@@ -28,6 +28,7 @@ export default function sort(){
 
 
   // insertion sort - split the array into sorted and unsorted parts and compare unsorted array with sorted parts, pick every element and insert it in comparision to every other elements
+  // there is i=1; j=i-1; while condition in for loop, swap with j, assign arr[i]
   function insertionSort(arr){
      for(let i=1; i<arr.length-1 ; i++){
        let nuberToInsert = arr[i];
@@ -37,12 +38,42 @@ export default function sort(){
         arr[j+1] = arr[j]
         j = j-1
        }
-      //   while is to change the j and arr[j], some swapping
+      // while is to change the j and arr[j], some swapping - pushing the big number forward (or) duplicating the element to insert the proper element in its position
 
        arr[j+1] = numberToInsert
       //  insertion happens here
      }
   }
   // console.log(insertionSort([8,16,4,12,-5]))
+
+
+
+  // Quick sort - take a pivot(basically any element) and sort the right and left part of the array - refer picture folder
+  function quickSort(arr){
+    if(arr.length<2){
+      return arr;
+      // base case to end recursive, if leght is less than 2 return arr
+    }
+
+    let pivot = arr[arr.length -1]
+    let left = []
+    let right = []
+
+    for (i=0; i<arr.length-1; i++){
+      if(arr[i]<pivot){
+        left.push(arr[i])
+      }
+      else{
+        right.push(arr[i])
+      }
+      // simple if less push to left else push to right
+    }
+
+    return [...quickSort(left),pivot,...quickSort(right)];
+    // logic of quick sort, append sorted left, pivot and right array. also recussive technique is used
+    // big O - worst case - n^2, avg case - nlogn
+  }
+
+  
 
 }
