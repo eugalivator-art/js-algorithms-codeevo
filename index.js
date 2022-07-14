@@ -95,9 +95,11 @@ function isPowerof2BitWise(n) {
   // in binary power of 2 ends with 0 (3-100, 4-1000)
 }
 
-// only math recursion
+// only math recursion ie fibonnaci and factorial
 recursion();
 
+// linear search, binary search, recursive binary
 search();
 
+// bubble sort, Insertion sort, Quick sort, Merge sort
 sort();
