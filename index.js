@@ -2,6 +2,7 @@
 import './style.css';
 import recursion from './recursion';
 import search from './search';
+import sort from './sort';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
@@ -98,3 +99,5 @@ function isPowerof2BitWise(n) {
 recursion();
 
 search();
+
+sort();

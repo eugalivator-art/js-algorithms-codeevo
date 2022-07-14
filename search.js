@@ -42,5 +42,35 @@ export default function search() {
     return -1
     // big-o = O(log(n))
   }
-  console.log(binarySearch([2, 4, 5, 8, 9, 12, 34, 56], 12))
+  // console.log(binarySearch([2, 4, 5, 8, 9, 12, 34, 56], 12))
+
+
+
+  // binary search recursive
+  function recursiveBinary(arr, target){
+    return search(arr, target, 0, arr.length-1)
+  }
+  function search(arr, target, leftIndex, rightIndex){
+    if(leftIndex>rightIndex){
+      return -1
+      // base case
+    }
+    let middleIndex = Math.floor((leftIndex+rightIndex)/2);
+    
+    if(target === arr[middleIndex]){
+      return middleIndex
+      // base case
+    }
+
+    if(target<arr[middleIndex]){
+      return search(arr,target,leftIndex,middleIndex-1)
+      // recursive
+    }
+    else{
+      return search(arr, target, middleIndex+1, rightIndex)
+      // recursive
+    }
+    // big-O = O(log(n))
+  }
+  // console.log(recursiveBinary([3,5,7,9,12,14,16],12))
 }
