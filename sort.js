@@ -73,7 +73,37 @@ export default function sort(){
     // logic of quick sort, append sorted left, pivot and right array. also recussive technique is used
     // big O - worst case - n^2, avg case - nlogn
   }
+  // console.log(insertionSort([8,16,4,12,-5]))
 
-  
 
+  // merge sort - divide the array into sub array of individual elements and then compare the first element of left and right array and push to new array accordingly. At the end merge all the arrays
+  function mergeSort(arr){
+    if(arr.length < 2){
+      return arr
+    }
+    const mid = Math.floor(arr.length/2)
+    const leftArr = arr.slice(0,mid)
+    const rightArr = arr.splice(mid)
+
+    return merge(mergeSort(leftArr), mergeSort(rightArr))
+    //  to make left and right array and pass to merge function
+  }
+  function merge(leftArr, rightArr){
+    // divided into 2 functions
+
+    const sortedArr = []
+
+    while(leftArr.length && rightArr.length){
+      if(leftArr[0]<= rightArr[0]){
+        sortedArr.push(leftArr.shift())
+        // pushing to leftarr whose first element is removed
+      } else {
+        sortedArr.push(rightArr.shift())
+      }
+    }
+
+    return [...sortedArr, ...leftArr, ...rightArr]
+  }
+  // big O - nlogn
+  // console.log(insertionSort([8,16,4,12,-5]))
 }
