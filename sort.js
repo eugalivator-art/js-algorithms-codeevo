@@ -48,7 +48,8 @@ export default function sort(){
 
 
 
-  // Quick sort - take a pivot(basically any element) and sort the right and left part of the array - refer picture folder
+  // Quick sort - take a pivot(basically any element) and sort the right and left part of the array
+  // refer in sorting_pics
   function quickSort(arr){
     if(arr.length<2){
       return arr;
@@ -77,6 +78,7 @@ export default function sort(){
 
 
   // merge sort - divide the array into sub array of individual elements and then compare the first element of left and right array and push to new array accordingly. At the end merge all the arrays
+  // refer in sorting_pics
   function mergeSort(arr){
     if(arr.length < 2){
       return arr
